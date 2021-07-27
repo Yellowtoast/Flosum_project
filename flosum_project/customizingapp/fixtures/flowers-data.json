@@ -1,0 +1,21 @@
+[
+    {
+      "model": "customizingapp.flower",
+      "fields": {
+        "flower_name": "달리아",
+        "flower_color": "핑크",
+        "flower_price": 3500,
+        "flower_img": "dhaila.jpg"
+      }
+    },
+    {
+      "model": "customizingapp.flower",
+      "fields": {
+        "flower_name": "해바라기",
+        "flower_color": "노랑",
+        "flower_price": 4000,
+        "flower_img": "sunflower.jpg"
+      }
+    }
+]
+
