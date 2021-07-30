@@ -1,177 +1,189 @@
 <!doctype html>
 <html>
 
-<head>
-  <link rel='stylesheet' type='text/css' href='css/default.css' />
-  <link rel='stylesheet' type='text/css' href='css/layout.css' />
-  <link rel='stylesheet' type='text/css' href='css/margin.css' />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="page-wrapper">
-    <div class="nav-wrapper">
-      <div class="logo">Flosum</div>
-      <div class="row-t1">
-        <div class="row-t0 margin-right-120 margin-top-12">
-          <a class="nav-item">홈</a>
-          <a class="nav-item active">나만의 꽃 만들기</a>
-          <a class="nav-item">Flosum 게시판</a>
+    <head>
+        <link rel='stylesheet' type='text/css' href='css/default.css'/>
+        <link rel='stylesheet' type='text/css' href='css/layout.css'/>
+        <link rel='stylesheet' type='text/css' href='css/margin.css'/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin="crossorigin">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Playfair+Display:wght@700&display=swap"
+            rel="stylesheet">
+        <script src="https://unpkg.com/konva@8.1.1/konva.min.js"></script>
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="logo">Flosum</div>
+                    <div class="row-t1">
+                        <div class="row-t0 margin-right-120 margin-top-12">
+                            <a class="nav-item active" id="menu1" onclick="changeMenuBtn('menu1');">홈</a>
+                            <a class="nav-item" id="menu2" onclick="changeMenuBtn('menu2');">나만의 꽃 만들기</a>
+                            <a class="nav-item" id="menu3" onclick="changeMenuBtn('menu3');">Flosum 게시판</a>
+                        </div>
+                        <div class="row-t1 margin-bottom-16">
+                            <button class="icon">
+                                <img src='icon/person.png'/>
+                            </button>
+                            <button class="icon">
+                                <img src='icon/heart.png'/>
+                            </button>
+                            <button class="icon">
+                                <img src='icon/cart.png'/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="content-wrapper">
+                <div class="result-section" id="container"></div>
+                <div class="input-section">
+                    <div class="label">STEP1. 꽃다발 사이즈 고르기</div>
+                    <div class="size-btn-wrapper">
+                        <button class="size-btn active" id="S" onclick="changeBunchSize('S');">S</button>
+                        <button class="size-btn" id="M" onclick="changeBunchSize('M');">M</button>
+                        <button class="size-btn" id="L" onclick="changeBunchSize('L');">L</button>
+                    </div>
+                    <div id="flowers">
+                    <div class="label">STEP2. 꽃 선택하기</div>
+                    <div class="sub-label">
+                        <div class="underline"></div>
+                        메인꽃
+                    </div>
+                    <div class="selection-row">
+                        <div class="item">
+                            <img class="flower" src="img/flower/flower1.png" draggable="true" id="flower1"/>
+                            <div class="name">카네이션</div>
+                        </div>
+                        <div class="item">
+                            <img class="flower" src="img/flower/flower2.png"/>
+                            <div class="name">달리아</div>
+                        </div>
+                        <div class="item">
+                            <img class="flower" src="img/flower/flower3.png"/>
+                            <div class="name">포인세티아</div>
+                        </div>
+                        <div class="item">
+                            <img class="flower" src="img/flower/flower4.png"/>
+                            <div class="name">카네이션</div>
+                        </div>
+                        <div class="item">
+                            <img class="flower" src="img/flower/flower5.png"/>
+                            <div class="name">장미</div>
+                        </div>
+                    </div>
+                    <div class="sub-label">____ 서브꽃</div>
+                    <div class="selection-row" id="subflowers">
+                        <div class="item">
+                            <img src="img/subFlower/subFlower1.png"/>
+                            <div class="name">아팝나무꽃</div>
+                        </div>
+                        <div class="item">
+                            <img src="img/subFlower/subFlower2.png"/>
+                            <div class="name">안개꽃</div>
+                        </div>
+                        <div class="item">
+                            <img src="img/subFlower/subFlower3.png"/>
+                            <div class="name">목화</div>
+                        </div>
+                        <div class="item">
+                            <img src="img/subFlower/subFlower4.png"/>
+                            <div class="name">유칼립투스</div>
+                        </div>
+                        <div class="item">
+                            <img src="img/subFlower/subFlower5.png"/>
+                            <div class="name">로즈마리</div>
+                        </div>
+                    </div>
+
+                  </div>
+                    <div class="margin-top-64">
+                        <div class="label">STEP3. 포장지 고르기</div>
+                        <div class="selection-row">
+                            <div class="item">
+                                <img src="img/wrapping/wrapping1.png"/>
+                                <div class="name">크라프트 모카</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/wrapping/wrapping2.png"/>
+                                <div class="name">크라프트 연베이지</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/wrapping/wrapping3.png"/>
+                                <div class="name">크라프트 연핑크</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/wrapping/wrapping4.png"/>
+                                <div class="name">크라프트 적색</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/wrapping/wrapping5.png"/>
+                                <div class="name">크라프트 카키</div>
+                            </div>
+                        </div>
+                        <div class="selection-row">
+                            <div class="item">
+                                <img src="img/wrapping/wrapping6.png"/>
+                                <div class="name">내츄럴마 그레이</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/wrapping/wrapping7.png"/>
+                                <div class="name">내츄럴마 연베이지</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/wrapping/wrapping8.png"/>
+                                <div class="name">내츄럴마 핑크</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/wrapping/wrapping9.png"/>
+                                <div class="name">내츄럴마 빨강</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/wrapping/wrapping10.png"/>
+                                <div class="name">내츄럴마 초록</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="margin-top-64">
+                        <div class="label">STEP4. 데코 고르기</div>
+                        <div class="selection-row">
+                            <div class="item">
+                                <img src="img/deco/deco1.png"/>
+                                <div class="name">축하팻말</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/deco/deco2.png"/>
+                                <div class="name">미니 카드</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/deco/deco3.png"/>
+                                <div class="name">리본 빨강색</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/deco/deco4.png"/>
+                                <div class="name">리본 하늘색</div>
+                            </div>
+                            <div class="item">
+                                <img src="img/deco/deco5.png"/>
+                                <div class="name">리본 초록색</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="complete-btn-row">
+                        <button>꽃 주문하기</button>
+                        <button>저장하고 다시 만들기</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row-t1 margin-bottom-16">
-          <button class="icon">
-            <img src='icon/person.png' />
-          </button>
-          <button class="icon">
-            <img src='icon/heart.png' />
-          </button>
-          <button class="icon">
-            <img src='icon/cart.png' />
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="content-wrapper">
-      <div class="result-section"></div>
-      <div class="input-section">
-        <div class="label">STEP1. 꽃다발 사이즈 고르기</div>
-        <div class="size-btn-wrapper">
-          <button class="size-btn active" id="S" onclick="changeBunchSize('S');">S</button>
-          <button class="size-btn" id="M" onclick="changeBunchSize('M');">M</button>
-          <button class="size-btn" id="L" onclick="changeBunchSize('L');">L</button>
-        </div>
-        <div class="label">STEP2. 꽃 선택하기</div>
-        <div class="sub-label">
-          <div class="underline"></div>
-          메인꽃
-        </div>
-        <div class="selection-row">
-          <div class="item">
-            <img src="img/flower/flower1.png" />
-            <div class="name">카네이션</div>
-          </div>
-          <div class="item">
-            <img src="img/flower/flower2.png" />
-            <div class="name">달리아</div>
-          </div>
-          <div class="item">
-            <img src="img/flower/flower3.png" />
-            <div class="name">포인세티아</div>
-          </div>
-          <div class="item">
-            <img src="img/flower/flower4.png" />
-            <div class="name">카네이션</div>
-          </div>
-          <div class="item">
-            <img src="img/flower/flower5.png" />
-            <div class="name">장미</div>
-          </div>
-        </div>
-        <div class="sub-label">____ 서브꽃</div>
-        <div class="selection-row">
-          <div class="item">
-            <img src="img/subFlower/subFlower1.png" />
-            <div class="name">아팝나무꽃</div>
-          </div>
-          <div class="item">
-            <img src="img/subFlower/subFlower2.png" />
-            <div class="name">안개꽃</div>
-          </div>
-          <div class="item">
-            <img src="img/subFlower/subFlower3.png" />
-            <div class="name">목화</div>
-          </div>
-          <div class="item">
-            <img src="img/subFlower/subFlower4.png" />
-            <div class="name">유칼립투스</div>
-          </div>
-          <div class="item">
-            <img src="img/subFlower/subFlower5.png" />
-            <div class="name">로즈마리</div>
-          </div>
-        </div>
-        <div class="margin-top-64">
-          <div class="label">STEP3. 포장지 고르기</div>
-          <div class="selection-row">
-            <div class="item">
-              <img src="img/wrapping/wrapping1.png" />
-              <div class="name">크라프트 모카</div>
-            </div>
-            <div class="item">
-              <img src="img/wrapping/wrapping2.png" />
-              <div class="name">크라프트 연베이지</div>
-            </div>
-            <div class="item">
-              <img src="img/wrapping/wrapping3.png" />
-              <div class="name">크라프트 연핑크</div>
-            </div>
-            <div class="item">
-              <img src="img/wrapping/wrapping4.png" />
-              <div class="name">크라프트 적색</div>
-            </div>
-            <div class="item">
-              <img src="img/wrapping/wrapping5.png" />
-              <div class="name">크라프트 카키</div>
-            </div>
-          </div>
-          <div class="selection-row">
-            <div class="item">
-              <img src="img/wrapping/wrapping6.png" />
-              <div class="name">내츄럴마 그레이</div>
-            </div>
-            <div class="item">
-              <img src="img/wrapping/wrapping7.png" />
-              <div class="name">내츄럴마 연베이지</div>
-            </div>
-            <div class="item">
-              <img src="img/wrapping/wrapping8.png" />
-              <div class="name">내츄럴마 핑크</div>
-            </div>
-            <div class="item">
-              <img src="img/wrapping/wrapping9.png" />
-              <div class="name">내츄럴마 빨강</div>
-            </div>
-            <div class="item">
-              <img src="img/wrapping/wrapping10.png" />
-              <div class="name">내츄럴마 초록</div>
-            </div>
-          </div>
-        </div>
-        <div class="margin-top-64">
-          <div class="label">STEP4. 데코 고르기</div>
-          <div class="selection-row">
-            <div class="item">
-              <img src="img/deco/deco1.png" />
-              <div class="name">축하팻말</div>
-            </div>
-            <div class="item">
-              <img src="img/deco/deco2.png" />
-              <div class="name">미니 카드</div>
-            </div>
-            <div class="item">
-              <img src="img/deco/deco3.png" />
-              <div class="name">리본 빨강색</div>
-            </div>
-            <div class="item">
-              <img src="img/deco/deco4.png" />
-              <div class="name">리본 하늘색</div>
-            </div>
-            <div class="item">
-              <img src="img/deco/deco5.png" />
-              <div class="name">리본 초록색</div>
-            </div>
-          </div>
-        </div>
-        <div class="complete-btn-row">
-          <button>꽃 주문하기</button>
-          <button>저장하고 다시 만들기</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="js/button.js"></script>
-</body>
+        <script src="js/button.js"></script>
+        <script src="js/drag.js"></script>
+    </body>
 </html>

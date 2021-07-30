@@ -1,6 +1,10 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.urls import path
+from customizingapp.views import home
 
-# Create your views here.
-def home(request):
-    return render(request, '.html')
+# 앱 이름을 설정하여  accountapp:home을 치면 해당 브라우저로
+# 바로 이동하는 함수 설정
+app_name = "accountapp" 
+
+urlpatterns = [
+    path('home/', home, name ='home')
+]

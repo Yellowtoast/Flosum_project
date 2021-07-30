@@ -58,13 +58,15 @@
   font-weight: bold;
   color: var(--nav-text-color);
   margin-left: 40px;
+
 }
 
 .nav-wrapper a.nav-item.active {
   display: inline-block;
   color: var(--primary-color);
   border-bottom: 8px solid var(--primary-color);
-  padding-bottom: 24px;
+  padding-bottom: 23px;
+
 }
 
 .content-wrapper {
@@ -173,3 +175,11 @@
   font-weight: bold;
   font-size: 24px;
 }
+
+#container{
+  margin-left: 6rem;
+  width: 750px;
+  height: 730px;
+  border: 10px solid black ;
+}
+
