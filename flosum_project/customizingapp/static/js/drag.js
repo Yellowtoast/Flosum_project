@@ -25,6 +25,8 @@ con.addEventListener('dragover', function (e) {
   e.preventDefault(); // !important
 });
 
+
+
 con.addEventListener('drop', function (e) {
   e.preventDefault();
   // now we need to find pointer position
