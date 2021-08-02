@@ -80,14 +80,28 @@ body{
     /* margin-top: 1rem; */
 }
 
+#submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #signup .subbtn {
     height: 2.5rem;
-    width: 17.3rem;
+    width: 8.4rem;
     background-color: #B45C56;
     border: none;
     font-family: Noto Sans KR, sans-serif;
     color: #ffffff;
 }
+
+/* #btn-left {
+    justify-content: left;
+}
+
+#btn-right {
+    justify-content: right;
+} */
 
 #signup div {
     display: flex;

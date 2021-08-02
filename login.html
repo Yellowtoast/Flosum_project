@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="signup.css">
-    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <title>Log In</title>
     
 </head>
 <body>
@@ -14,21 +14,10 @@
     <!-- </div> -->
     <div class="flosum">Flosum</div>
 
-    <div class="container">
-        <div id="tags">
-            <p class="name-tag">이름</p>
-            <p class="id-tag">아이디</p>
-            <p class="pw-tag">비밀번호</p>
-            <p class="email-tag">이메일</p>
-        </div>
-
         <div id="signup">
             <form method="POST" action="{% url 'login' %}">
 
                 <!-- {% csrf_token %} -->
-                <div id="username">
-                    <input name="username" onfocus="this.placeholder=''" onblur="this.placeholder='이름을 입력하세요'" type="text" id="name" placeholder="이름을 입력하세요">
-                </div>
                 <div id="userid">
                     <input name="identification" onfocus="this.placeholder=''" type="text" id="id" onblur="this.placeholder='아이디를 입력하세요'" placeholder="아이디를 입력하세요">
                 </div>
@@ -36,12 +25,10 @@
                 <div id="password">
                     <input name="password" onfocus="this.placeholder=''" type="password" id="pswd" onblur="this.placeholder='비밀번호를 입력하세요'" placeholder="비밀번호를 입력하세요">
                 </div>
-                <div id="address">
-                    <input name="email-addr" onfocus="this.placeholder=''" type="text" id="email" onblur="this.placeholder='이메일을 입력하세요'" placeholder="이메일을 입력하세요">
-                </div>
                 <br>
                 <div id="submit">
-                    <input type="submit" class="subbtn" value="회원가입">
+                    <input type="submit" class="subbtn" id="btn-left" value="로그인">
+                    <a href="#"><input type="button" class="subbtn" id="btn-right" value="회원가입"></a>
                 </div>
                 
             </form>
