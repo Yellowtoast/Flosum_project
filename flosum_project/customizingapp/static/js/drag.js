@@ -1,7 +1,7 @@
 var wrapper = document.getElementById("container")
 var width = wrapper.clientWidth;
 var height = wrapper.clientHeight;
-var image;
+var imageobject = new Konva.Image();
 
 var stage = new Konva.Stage({
   container: 'container',
@@ -33,35 +33,51 @@ con.addEventListener('drop', function (e) {
   // we can register it manually:
   stage.setPointersPositions(e);
 
+  // var imageObj = new Image();
+  // imageObj.onload = function() {
+  //   var image = new Konva.Image({
+  //     x: 200,
+  //     y: 50,
+  //     image: imageObj,
+  //     width: 100,
+  //     height: 100
+  //   });
+  // };
+  
+  // imageObj.src = '/path/to/image.jpg'
+  
   Konva.Image.fromURL(itemURL, function (image) {
-    image.setAttrs({
-      width: 200,
-      height: 200,
-      scaleX: 0.8,
-      scaleY: 0.8
-    })
-    layer.add(image);
+      image.setAttrs({
+        width: 160,
+        height: 160,
+        scaleX: 0.8,
+        scaleY: 0.8,
+        name: 'flower',
+      })
+      imageobject = image
+      layer.add(imageobject);
 
-    image.position(stage.getPointerPosition());
-    image.draggable(true);
-  });
+      imageobject.position(stage.getPointerPosition());
+      imageobject.draggable(true);
+    });
+
 });
-
-
-
+// ================================================
 
 var tr = new Konva.Transformer();
 layer.add(tr);
 
 // by default select all shapes
-tr.nodes([image]);
+tr.nodes([imageobject]);
 
 // add a new feature, lets add ability to draw selection rectangle
 var selectionRectangle = new Konva.Rect({
   fill: 'rgba(0,0,255,0.5)',
-  visible: false,
+  visible: true,
 });
 layer.add(selectionRectangle);
+
+
 
 var x1, y1, x2, y2;
 stage.on('mousedown touchstart', (e) => {
@@ -127,7 +143,9 @@ stage.on('click tap', function (e) {
   }
 
   // do nothing if clicked NOT on our rectangles
-  if (!e.target.hasName('rect')) {
+  console.log(e.target);
+  if (!e.target.hasName('flower')) {
+    console.log('not include name');
     return;
   }
 
