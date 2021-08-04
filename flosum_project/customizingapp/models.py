@@ -31,7 +31,7 @@ class Bouquet(models.Model):
     name = models.CharField("꽃다발 이름",max_length=100,  null=True)
     flower = models.ForeignKey(Flower,  null=True, verbose_name="꽃다발 꽃", on_delete=models.CASCADE)
     creator = models.ForeignKey(User,  null=True, verbose_name="꽃다발 만든이", on_delete=models.CASCADE)
-    quantity = models.PositiveSmallIntegerField(null=True, default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
+    # quantity = models.PositiveSmallIntegerField(null=True, default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
     decoration = models.ForeignKey(Decoration, null=True, verbose_name="꽃다발 데코", on_delete=models.CASCADE)
     wrapper = models.ForeignKey(Wrapper,  null=True, verbose_name="꽃다발 포장지", on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
