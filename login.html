@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <title>Log In</title>
+    
+</head>
+<body>
+    <div id="center">
+        <img id="flower" src="flower.png" class="responsive">
+    <!-- </div> -->
+    <div class="flosum">Flosum</div>
+
+        <div id="signup">
+            <form method="POST" action="{% url 'login' %}">
+
+                <!-- {% csrf_token %} -->
+                <div id="userid">
+                    <input name="identification" onfocus="this.placeholder=''" type="text" id="id" onblur="this.placeholder='아이디를 입력하세요'" placeholder="아이디를 입력하세요">
+                </div>
+
+                <div id="password">
+                    <input name="password" onfocus="this.placeholder=''" type="password" id="pswd" onblur="this.placeholder='비밀번호를 입력하세요'" placeholder="비밀번호를 입력하세요">
+                </div>
+                <br>
+                <div id="submit">
+                    <input type="submit" class="subbtn" id="btn-left" value="로그인">
+                    <a href="#"><input type="button" class="subbtn" id="btn-right" value="회원가입"></a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>
