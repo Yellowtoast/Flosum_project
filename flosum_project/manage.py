@@ -6,7 +6,11 @@ import sys
 
 def main():
     """Run administrative tasks."""
+<<<<<<< HEAD
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
+=======
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'flosum_project.settings')
+>>>>>>> jihye_branch
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

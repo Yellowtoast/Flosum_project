@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!c:\users\user\desktop\flosum_project\flosum_project\myvenv\scripts\python.exe
+=======
+#!c:\users\jihye\documents\flosum\flosum_project\myvenv\scripts\python.exe
+>>>>>>> jihye_branch
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

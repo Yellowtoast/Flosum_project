@@ -1,5 +1,9 @@
 """
+<<<<<<< HEAD
 WSGI config for project project.
+=======
+WSGI config for flosum_project project.
+>>>>>>> jihye_branch
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +15,10 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+<<<<<<< HEAD
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
+=======
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'flosum_project.settings')
+>>>>>>> jihye_branch
 
 application = get_wsgi_application()

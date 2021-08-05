@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 """project URL Configuration
+=======
+"""flosum_project URL Configuration
+>>>>>>> jihye_branch
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -15,7 +19,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+<<<<<<< HEAD
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+=======
+from django.urls.conf import include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('account', include('accountapp.urls'))
+>>>>>>> jihye_branch
 ]

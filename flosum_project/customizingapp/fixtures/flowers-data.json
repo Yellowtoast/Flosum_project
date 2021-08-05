@@ -1,0 +1,66 @@
+[
+    {
+      "model": "customizingapp.flower",
+      "fields": {
+        "flower_name": "dhila",
+        "flower_color": "핑크",
+        "flower_price": 3500,
+        "flower_img": "dhaila.png"
+      }
+    },
+    {
+      "model": "customizingapp.flower",
+      "fields": {
+        "flower_name": "bellflower",
+        "flower_color": "핑크",
+        "flower_price": 3500,
+        "flower_img": "dhaila.png"
+      }
+    },
+    {
+      "model": "customizingapp.flower",
+      "fields": {
+        "flower_name": "carnation",
+        "flower_color": "핑크",
+        "flower_price": 3500,
+        "flower_img": "dhaila.png"
+      }
+    },
+    {
+      "model": "customizingapp.flower",
+      "fields": {
+        "flower_name": "chrysanthemum",
+        "flower_color": "핑크",
+        "flower_price": 3500,
+        "flower_img": "dhaila.png"
+      }
+    },
+    {
+      "model": "customizingapp.flower",
+      "fields": {
+        "flower_name": "hydrangea",
+        "flower_color": "핑크",
+        "flower_price": 3500,
+        "flower_img": "dhaila.png"
+      }
+    },
+    {
+      "model": "customizingapp.flower",
+      "fields": {
+        "flower_name": "달리아",
+        "flower_color": "핑크",
+        "flower_price": 3500,
+        "flower_img": "dhaila.png"
+      }
+    },
+    {
+      "model": "customizingapp.flower",
+      "fields": {
+        "flower_name": "달리아",
+        "flower_color": "핑크",
+        "flower_price": 3500,
+        "flower_img": "dhaila.png"
+      }
+    }
+]
+
