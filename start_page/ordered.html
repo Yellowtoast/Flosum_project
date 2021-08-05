@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제완료</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flosum</title>
+    <link rel="stylesheet" href="order.css">
+
+    <link rel='stylesheet' type='text/css' href='css/default.css' />
+  <link rel='stylesheet' type='text/css' href='css/layout.css' />
+  <link rel='stylesheet' type='text/css' href='css/margin.css' />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="nav-wrapper">
+          <div class="logo">Flosum</div>
+          <div class="row-t1">
+            <div class="row-t0 margin-right-120 margin-top-12">
+              <a class="nav-item">홈</a>
+              <a class="nav-item active">나만의 꽃 만들기</a>
+              <a class="nav-item">로그인</a>
+              <a class="nav-item">회원가입</a>
+            </div>
+            <div class="row-t1 margin-bottom-16">
+              <button class="icon">
+                <img src='icon/person.png' />
+              </button>
+              <button class="icon">
+                <img src='icon/heart.png' />
+              </button>
+              <button class="icon">
+                <img src='icon/cart.png' />
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="ordered">
+        <div class="tada">
+            <!--<lottie-player th:src="@{./img/51686-a-botanical-wreath-loading.json}"  speed="1" loop autoplay>
+            </lottie-player>-->
+            <!--<lottie-player src="lottie-player src="https://assets1.lottiefiles.com/packages/lf20_lD1yMK.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>-->
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_jysqpybu.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
+        </div>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+        <div class="order_name">
+            <div class="final">Order is Complete!</div>
+            <div class="txt">
+                <p align: center;><b>{{ }}</b>님만의 꽃다발이</p>
+                <p align: center;>집 앞으로 배송됩니다.</p>
+            </div>
+            
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
