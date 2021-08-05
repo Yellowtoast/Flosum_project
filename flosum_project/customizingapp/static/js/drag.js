@@ -3,6 +3,7 @@ var width = wrapper.clientWidth;
 var height = wrapper.clientHeight;
 var imageobject = new Konva.Image();
 var flowername;
+var bouquet_items ={}
 
 var stage = new Konva.Stage({
   container: 'container',
@@ -45,6 +46,14 @@ con.addEventListener('drop', function (e) {
     //URL에서 꽃 사진 이름만 추출하기 'flower1.png'이와 같은 형태로만
     flowername = flowername.replace(/^.*\//, '');
     
+    if(bouquet_items[flowername]==null){
+      bouquet_items[flowername]=1;
+      console.log(bouquet_items);
+    }
+    else{
+      ++bouquet_items[flowername];
+      console.log(bouquet_items);
+    }
     
     if(itemURL)
 
@@ -149,7 +158,18 @@ stage.on('click tap', function (e) {
   document.getElementById('removeClick').addEventListener('click', () => {
       
     e.target.destroy();
+    tr.nodes([]);
     
+    var itemName = e.target.attrs.name;
+  
+    if(bouquet_items[itemName]==0){
+      bouquet_items[itemName]=0;
+    }
+    else{
+      --bouquet_items[itemName];
+    }
+
+    console.log(bouquet_items);
  
   layer.draw();
 });
