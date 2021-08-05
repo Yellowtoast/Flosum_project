@@ -2,6 +2,7 @@ var wrapper = document.getElementById("container")
 var width = wrapper.clientWidth;
 var height = wrapper.clientHeight;
 var imageobject = new Konva.Image();
+var flowername;
 
 var stage = new Konva.Stage({
   container: 'container',
@@ -35,33 +36,34 @@ con.addEventListener('drop', function (e) {
   // we can register it manually:
   stage.setPointersPositions(e);
 
-  // var imageObj = new Image();
-  // imageObj.onload = function() {
-  //   var image = new Konva.Image({
-  //     x: 200,
-  //     y: 50,
-  //     image: imageObj,
-  //     width: 100,
-  //     height: 100
-  //   });
-  // };
-  
-  // imageObj.src = '/path/to/image.jpg'
-  
+
+
+
   Konva.Image.fromURL(itemURL, function (image) {
+    flowername = itemURL;
+
+    //URL에서 꽃 사진 이름만 추출하기 'flower1.png'이와 같은 형태로만
+    flowername = flowername.replace(/^.*\//, '');
+    
+    
+    if(itemURL)
+
       image.setAttrs({
         width: 160,
         height: 160,
         scaleX: 0.8,
         scaleY: 0.8,
-        name: 'flower',
+        name: flowername     
       })
+       
       imageobject = image
+       
       layer.add(imageobject);
-
       imageobject.position(stage.getPointerPosition());
       imageobject.draggable(true);
-    });
+      
+    }); 
+    
 
 });
 // ================================================
@@ -144,13 +146,19 @@ stage.on('click tap', function (e) {
     return;
   }
 
+  document.getElementById('removeClick').addEventListener('click', () => {
+      
+    e.target.destroy();
+    
+ 
+  layer.draw();
+});
   // do nothing if clicked NOT on our rectangles
   console.log(e.target);
-  if (!e.target.hasName('flower')) {
+  if (!e.target.hasName(flowername)) {
     console.log('not include name');
     return;
   }
-
   // do we pressed shift or ctrl?
   const metaPressed = e.evt.shiftKey || e.evt.ctrlKey || e.evt.metaKey;
   const isSelected = tr.nodes().indexOf(e.target) >= 0;
@@ -159,6 +167,7 @@ stage.on('click tap', function (e) {
     // if no key pressed and the node is not selected
     // select just one
     tr.nodes([e.target]);
+    
   } else if (metaPressed && isSelected) {
     // if we pressed keys and node was selected
     // we need to remove it from selection:

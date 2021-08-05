@@ -28,12 +28,12 @@ class Wrapper(models.Model):
     img = models.ImageField("포장지 이미지", null=True)
 
 class Bouquet(models.Model):
+    
     name = models.CharField("꽃다발 이름",max_length=100,  null=True)
-    flower = models.ForeignKey(Flower,  null=True, verbose_name="꽃다발 꽃", on_delete=models.CASCADE)
+    bouquet_canvas = models.TextField("꽃다발 이미지 캔버스 데이터", null=True)
+    bouquet_items = models.TextField("꽃다발 내부 아이템", null=True)
+    total_price = models.IntegerField("꽃다발 총 가격", null = True)
     creator = models.ForeignKey(User,  null=True, verbose_name="꽃다발 만든이", on_delete=models.CASCADE)
-    # quantity = models.PositiveSmallIntegerField(null=True, default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
-    decoration = models.ForeignKey(Decoration, null=True, verbose_name="꽃다발 데코", on_delete=models.CASCADE)
-    wrapper = models.ForeignKey(Wrapper,  null=True, verbose_name="꽃다발 포장지", on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
