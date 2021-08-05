@@ -3,28 +3,6 @@
 
 
 body {
-    background-image: url(/img/main.png);
-    background-size: 2051px 1072px;
-    background-repeat: no-repeat;
-    background-position: center 187.2px ;
-
-}
-
-.start {
-    width: 343px;
-    height: 59px;
-    border-radius: 60px;
-    border-color: #F7DAD1;
-    background-color: #D66861;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 25px;
-    line-height: 36.2px;
-    color: white;
-    position: absolute;
-    left: 1008px;
-    top: 766px;
-    cursor: pointer;
-    border-style: none;
 
 }
 
@@ -205,3 +183,47 @@ body {
     font-size: 24px;
   }
   
+
+  .ordered{
+      position:absolute;
+      
+  }
+
+  .tada{
+    position: relative;
+    width: 994px;
+    height: 970px;
+
+    /*top: calc(50vh - 112.5px); left: calc(50vw - 150px);*/
+
+    left: 900px;
+    top: 113px; 
+    z-index: 1;
+}
+
+.order_name .final {
+    position: relative;
+    color: var(--primary-color);
+    left: 900px;
+    top: 113px; 
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Playfair Display', sans-serif;
+  }
+
+
+p{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    left: 50%;
+    top: 50%; 
+    margin-bottom: 24px;
+    font-size: 20px;
+    /*font-weight: bold;*/
+    color: #595959;
+  }
+
+.order_name{
+
+}

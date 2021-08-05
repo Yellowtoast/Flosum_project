@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제완료</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flosum</title>
-    
+    <link rel="stylesheet" href="order.css">
+
     <link rel='stylesheet' type='text/css' href='css/default.css' />
   <link rel='stylesheet' type='text/css' href='css/layout.css' />
   <link rel='stylesheet' type='text/css' href='css/margin.css' />
@@ -40,27 +46,29 @@
             </div>
           </div>
         </div>
-
-        <div class ="back">
-          <div style="position: relative;">
-              <img class ="background" src ="img/start/background.png"></div>
-          <div style="position: relative;">
-              <img class = "gold_background" src ="img/start/gold background.png"></div>
-          <div style="position: relative;">
-              <img class = "start_flower" src ="img/start/start_flower.png"></div>
-        </div>
-
-            <div class="start_message">
-                <div class="headline">
-                    <img src="img/start/Headline.png">
-                </div>
-                <p class ="summary">나만의 꽃을 만들어보세요! </p>
-                <p class ="summary">상상한 꽃을 우리집으로</p>
-            </div>
-
-            <button class="start_button" onClick="location.href='#'">나만의 꽃 만들러 가기</button>
-      </div>
-
     </div>
+
+    <div class="ordered">
+        <div class="tada">
+            <!--<lottie-player th:src="@{./img/51686-a-botanical-wreath-loading.json}"  speed="1" loop autoplay>
+            </lottie-player>-->
+            <!--<lottie-player src="lottie-player src="https://assets1.lottiefiles.com/packages/lf20_lD1yMK.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>-->
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_jysqpybu.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
+        </div>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+        <div class="order_name">
+            <div class="final">Order is Complete!</div>
+            <div class="txt">
+                <p align: center;><b>{{ }}</b>님만의 꽃다발이</p>
+                <p align: center;>집 앞으로 배송됩니다.</p>
+            </div>
+            
+        </div>
+    </div>
+
+
+    
 </body>
 </html>
