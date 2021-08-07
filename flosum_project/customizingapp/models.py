@@ -28,7 +28,6 @@ class Wrapper(models.Model):
     img = models.ImageField("포장지 이미지", null=True)
 
 class Bouquet(models.Model):
-    
     name = models.CharField("꽃다발 이름",max_length=100,  null=True)
     bouquet_canvas = models.TextField("꽃다발 이미지 캔버스 데이터", null=True)
     bouquet_items = models.TextField("꽃다발 내부 아이템", null=True)

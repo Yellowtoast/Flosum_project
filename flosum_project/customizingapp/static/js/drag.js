@@ -57,14 +57,15 @@ con.addEventListener('drop', function (e) {
       })
        
       imageobject = image
-       
+      
+      console.log(imageobject)
+      console.log(imageobject.attrs.name)
       layer.add(imageobject);
+      
       imageobject.position(stage.getPointerPosition());
       imageobject.draggable(true);
       
     }); 
-    
-
 });
 // ================================================
 
@@ -156,7 +157,7 @@ stage.on('click tap', function (e) {
   // do nothing if clicked NOT on our rectangles
   console.log(e.target);
   if (!e.target.hasName(flowername)) {
-    console.log('not include name');
+
     return;
   }
   // do we pressed shift or ctrl?
@@ -181,3 +182,5 @@ stage.on('click tap', function (e) {
     tr.nodes(nodes);
   }
 });
+
+
