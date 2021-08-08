@@ -9,11 +9,14 @@ var stage = new Konva.Stage({
   width: width,
   height: height,
 });
+
 var layer = new Konva.Layer();
+
 stage.add(layer);
 
 // 드래그하는 요소의 url은?
 var itemURL = '';
+
 
 document
   .getElementById('flowers')
@@ -22,6 +25,12 @@ document
   });
 
 var con = stage.container();
+
+
+
+
+
+
 con.addEventListener('dragover', function (e) {
   e.preventDefault(); // !important
 });
@@ -41,7 +50,6 @@ con.addEventListener('drop', function (e) {
 
   Konva.Image.fromURL(itemURL, function (image) {
     flowername = itemURL;
-
     //URL에서 꽃 사진 이름만 추출하기 'flower1.png'이와 같은 형태로만
     flowername = flowername.replace(/^.*\//, '');
     
@@ -58,8 +66,12 @@ con.addEventListener('drop', function (e) {
        
       imageobject = image
       
+
       console.log(imageobject)
       console.log(imageobject.attrs.name)
+
+
+
       layer.add(imageobject);
       
       imageobject.position(stage.getPointerPosition());
@@ -182,5 +194,4 @@ stage.on('click tap', function (e) {
     tr.nodes(nodes);
   }
 });
-
 
