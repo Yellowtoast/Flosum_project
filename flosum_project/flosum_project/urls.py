@@ -16,8 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from django.conf import settings
+from django.conf.urls.static import static
+from accountapp import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('account/', include('accountapp.urls'))
-]
+    path('accountapp/', include('accountapp.urls')),
+
+    #home이라는 걸로? 로그인 성공 시 만들기 페이지로 가야함.
+    path('', views.home, name='home'),
+] #+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

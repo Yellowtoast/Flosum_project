@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
 
     #내 어플리케이션 
-    'accountapp',
+    'accountapp.apps.AccountappConfig',
     'customizingapp',
 
     #장고 어플리케이션
