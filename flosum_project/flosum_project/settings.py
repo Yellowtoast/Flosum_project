@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     #내 어플리케이션 
     'accountapp',
     'customizingapp',
+    'blog',
 
     #장고 어플리케이션
     'django.contrib.admin',

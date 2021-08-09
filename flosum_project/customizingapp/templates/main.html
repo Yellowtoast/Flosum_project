@@ -1,11 +1,13 @@
-<!doctype html>
+
 {% load static %}
+
+<!doctype html>
 <html>
 
     <head>
-        <link rel='stylesheet' type='text/css' href='static/css/default.css'/>
-        <link rel='stylesheet' type='text/css' href='static/css/layout.css'/>
-        <link rel='stylesheet' type='text/css' href='static/css/margin.css'/>
+         <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+         <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}">
+         <link rel="stylesheet" type="text/css" href="{% static 'css/margin.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,13 +33,13 @@
                         </div>
                         <div class="row-t1 margin-bottom-16">
                             <button class="icon">
-                                <img src='static/icon/person.png'/>
+                                <img src="{% static 'icon/person.png' %}"/>
                             </button>
                             <button class="icon">
-                                <img src='static/icon/heart.png'/>
+                                <img src="{% static 'icon/heart.png' %}"/>
                             </button>
                             <button class="icon">
-                                <img src='static/icon/cart.png'/>
+                                <img src="{% static 'icon/cart.png' %}"/>
                             </button>
                         </div>
                     </div>
@@ -61,46 +63,46 @@
                     </div>
                     <div class="selection-row">
                         <div class="item">
-                            <img class="flower" src="static/img/flower/flower1.png" draggable="true" id="flower1"/>
+                            <img class="flower" src="{% static 'img/flower/flower1.png' %}" draggable="true" id="flower1"/>
                             <div class="name">카네이션</div>
                         </div>
                         <div class="item">
-                            <img class="flower" src="static/img/flower/flower2.png"/>
+                            <img class="flower" src="{% static 'img/flower/flower2.png' %}"/>
                             <div class="name">달리아</div>
                         </div>
                         <div class="item">
-                            <img class="flower" src="static/img/flower/flower3.png"/>
+                            <img class="flower" src="{% static 'img/flower/flower3.png' %}"/>
                             <div class="name">포인세티아</div>
                         </div>
                         <div class="item">
-                            <img class="flower" src="static/img/flower/flower4.png"/>
+                            <img class="flower" src="{% static 'img/flower/flower4.png' %}"/>
                             <div class="name">카네이션</div>
                         </div>
                         <div class="item">
-                            <img class="flower" src="static/img/flower/flower5.png"/>
+                            <img class="flower" src="{% static 'img/flower/flower5.png' %}"/>
                             <div class="name">장미</div>
                         </div>
                     </div>
                     <div class="sub-label">____ 서브꽃</div>
                     <div class="selection-row" id="subflowers">
                         <div class="item">
-                            <img src="static/img/subFlower/subFlower1.png"/>
+                            <img src="{% static 'img/subFlower/subFlower1.png' %}"/>
                             <div class="name">아팝나무꽃</div>
                         </div>
                         <div class="item">
-                            <img src="static/img/subFlower/subFlower2.png"/>
+                            <img src="{% static 'img/subFlower/subFlower2.png' %}"/>
                             <div class="name">안개꽃</div>
                         </div>
                         <div class="item">
-                            <img src="static/img/subFlower/subFlower3.png"/>
+                            <img src="{% static 'img/subFlower/subFlower3.png' %}"/>
                             <div class="name">목화</div>
                         </div>
                         <div class="item">
-                            <img src="static/img/subFlower/subFlower4.png"/>
+                            <img src="{% static 'img/subFlower/subFlower4.png' %}"/>
                             <div class="name">유칼립투스</div>
                         </div>
                         <div class="item">
-                            <img src="static/img/subFlower/subFlower5.png"/>
+                            <img src="{% static 'img/subFlower/subFlower5.png' %}"/>
                             <div class="name">로즈마리</div>
                         </div>
                     </div>
@@ -110,45 +112,45 @@
                         <div class="label">STEP3. 포장지 고르기</div>
                         <div class="selection-row">
                             <div class="item">
-                                <img src="static/img/wrapping/wrapping1.png"/>
+                                <img src="{% static 'img/wrapping/wrapping1.png'%}"/>
                                 <div class="name">크라프트 모카</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/wrapping/wrapping2.png"/>
+                                <img src="{% static 'img/wrapping/wrapping2.png'%}"/>
                                 <div class="name">크라프트 연베이지</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/wrapping/wrapping3.png"/>
+                                 <img src="{% static 'img/wrapping/wrapping3.png'%}"/>
                                 <div class="name">크라프트 연핑크</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/wrapping/wrapping4.png"/>
+                                <img src="{% static 'img/wrapping/wrapping4.png'%}"/>
                                 <div class="name">크라프트 적색</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/wrapping/wrapping5.png"/>
+                                <img src="{% static 'img/wrapping/wrapping5.png'%}"/>
                                 <div class="name">크라프트 카키</div>
                             </div>
                         </div>
                         <div class="selection-row">
                             <div class="item">
-                                <img src="static/img/wrapping/wrapping6.png"/>
+                                <img src="{% static 'img/wrapping/wrapping6.png'%}"/>
                                 <div class="name">내츄럴마 그레이</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/wrapping/wrapping7.png"/>
+                                <img src="{% static 'img/wrapping/wrapping7.png'%}"/>
                                 <div class="name">내츄럴마 연베이지</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/wrapping/wrapping8.png"/>
+                                <img src="{% static 'img/wrapping/wrapping8.png'%}"/>
                                 <div class="name">내츄럴마 핑크</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/wrapping/wrapping9.png"/>
+                                <img src="{% static 'img/wrapping/wrapping9.png'%}"/>
                                 <div class="name">내츄럴마 빨강</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/wrapping/wrapping10.png"/>
+                                <img src="{% static 'img/wrapping/wrapping10.png'%}"/>
                                 <div class="name">내츄럴마 초록</div>
                             </div>
                         </div>
@@ -157,23 +159,23 @@
                         <div class="label">STEP4. 데코 고르기</div>
                         <div class="selection-row">
                             <div class="item">
-                                <img src="static/img/deco/deco1.png"/>
+                                <img src="{% static 'img/deco/deco1.png' %}"/>
                                 <div class="name">축하팻말</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/deco/deco2.png"/>
+                                <img src="{% static 'img/deco/deco2.png' %}"/>
                                 <div class="name">미니 카드</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/deco/deco3.png"/>
+                                <img src="{% static 'img/deco/deco3.png' %}"/>
                                 <div class="name">리본 빨강색</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/deco/deco4.png"/>
+                                <img src="{% static 'img/deco/deco4.png' %}"/>
                                 <div class="name">리본 하늘색</div>
                             </div>
                             <div class="item">
-                                <img src="static/img/deco/deco5.png"/>
+                                <img src="{% static 'img/deco/deco5.png' %}"/>
                                 <div class="name">리본 초록색</div>
                             </div>
                         </div>

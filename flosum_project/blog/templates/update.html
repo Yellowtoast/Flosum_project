@@ -1,0 +1,15 @@
+{% extends 'basic.html' %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <h4>제목: </h4>
+    <input type="text" name="title">
+    <br>
+
+    <h4>본문: </h4>
+    <textarea cols=40 rows=10 name="body"></textarea>
+    <br>
+
+    <input class="btn btn-outline-dark" type="submit" value="수정하기">
+</form>
+{% endblock %}
