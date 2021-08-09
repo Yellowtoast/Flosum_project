@@ -4,6 +4,16 @@ var wrapperUrl = "http://127.0.0.1:5500/flosum_project/customizingapp/static/img
 var wrapperUrl2 = "http://127.0.0.1:5500/flosum_project/customizingapp/static/img/bouquet/s-흰색-앞.png"
 var bouquetSize = ['S','M','L'];
 
+
+  // function changeBunchSize(targetId) {
+  //   console.log(targetId);
+  //   ['S', 'M', 'L'].forEach((v) => {
+  //     if (v === targetId) document.getElementById(v).classList.add('active');
+  //     else document.getElementById(v).classList.remove('active');
+  //   });
+  // }
+
+
 document.getElementById('S').addEventListener('click', function(){
 
   Konva.Image.fromURL(wrapperUrl, function (image) {
