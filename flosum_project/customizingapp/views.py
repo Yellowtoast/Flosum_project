@@ -1,8 +1,13 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import Blog
-from django.utils import timezone
+from django.shortcuts import render
+from django.http import HttpResponse
+import simplejson as json
 
+# Create your views here.
 def main(request):
-    
-
     return render(request, 'main.html')
+
+
+def any(request):
+    example = 'hello'
+    context = {'hello':example}
+    return HttpResponse(json.parse(request.body))
