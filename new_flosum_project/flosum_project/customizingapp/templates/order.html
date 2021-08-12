@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/margin.css' %}">
+</head>
+<body>
+    <h1>상세주문</h1>
+    <div id="test">
+    
+    <form method="post" name="ex_form" action="{% url 'Pass' %}"> 
+            {%csrf_token%}
+            <input type="hidden" name="target_name" value="dasd"> 
+            <input type="button" name="anything_name" value="submit" onclick=ex_form.submit();> 
+    </form>
+
+    </div>
+    <div class="result-section" id="container"> 
+    <script>
+        console.log("들어옴?")
+        var items = JSON.parse(localStorage.getItem("items"));
+        var canvas = JSON.parse(localStorage.getItem("canvas"));
+        
+        for ( var key in items){
+            document.write("key " + key + " has value " + items[key]+"<br>");
+        }
+        
+
+        var count_num = localStorage.getItem("canvas");  
+        console.log(count_num);
+        document.ex_form.target_name.value = count_num
+       
+    </script>
+    <script src="{% static 'js/drag.js' %}"></script>
+
+    
+    
+    
+</body>
+</html>
