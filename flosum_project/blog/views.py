@@ -1,6 +1,10 @@
+from django.db.models.fields import NullBooleanField
 from django.shortcuts import render,get_object_or_404,redirect
 from .models import Blog,Comment
+from django.contrib.auth import get_user_model 
 from django.utils import timezone
+
+User = get_user_model()
 # Create your views here.
 def blog(request):
     blogs = Blog.objects.all()
@@ -17,12 +21,14 @@ def new(request):
     return render(request, 'new.html')
 
 def create(request):
+   
     blog = Blog() # 객체 틀 하나 가져오기
     blog.title = "NoTitle"  # 내용 채우기
-    if request.GET['title']:
-        blog.title=request.GET['title']
-    blog.body = request.GET['body'] # 내용 채우기
+    if request.POST['title']:
+        blog.title=request.POST['title']
+    blog.body = request.POST['body'] # 내용 채우기
     blog.pub_date = timezone.datetime.now() # 내용 채우기
+    blog.image = request.FILES.get('image')
     blog.writer = request.user
     blog.save() # 객체 저장하기
 

@@ -77,6 +77,16 @@
   align-items: flex-start;
 }
 
+.result-section {
+  position: absolute;
+  z-index: 1;
+  margin-left: 6rem;
+  width: 750px;
+  height: 730px;
+  border: 10px solid black ;
+  margin-right: 20px;
+}
+
 .input-section {
   width: calc(50vw - 120px);
   height: calc(100vh - 180px);
@@ -84,6 +94,18 @@
   border-radius: 30px;
   padding: 32px 28px;
   overflow-y: scroll;
+}
+
+#select {
+  width: 120px;
+  border-color: #484848;
+  border: solid 1.5px;
+  border-radius: 10px;
+  font-family: 'Noto Sans KR';
+  background-color: transparent;
+  margin-left: 10px;
+  padding-left: 20px;
+  padding-right: 0px;
 }
 
 .input-section .label {
@@ -141,6 +163,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
   margin: 0px 12px;
 }
 
@@ -175,11 +198,3 @@
   font-weight: bold;
   font-size: 24px;
 }
-
-#container{
-  margin-left: 6rem;
-  width: 750px;
-  height: 730px;
-  border: 10px solid black ;
-}
-

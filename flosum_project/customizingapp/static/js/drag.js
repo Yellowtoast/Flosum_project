@@ -2,21 +2,18 @@ var wrapper = document.getElementById("container")
 var width = wrapper.clientWidth;
 var height = wrapper.clientHeight;
 var imageobject = new Konva.Image();
-var flowername;
+var bouquet_items ={};
 
 var stage = new Konva.Stage({
   container: 'container',
   width: width,
   height: height,
 });
-
 var layer = new Konva.Layer();
-
 stage.add(layer);
 
 // 드래그하는 요소의 url은?
 var itemURL = '';
-
 
 document
   .getElementById('flowers')
@@ -25,35 +22,34 @@ document
   });
 
 var con = stage.container();
-
-
-
-
-
-
 con.addEventListener('dragover', function (e) {
   e.preventDefault(); // !important
 });
 
 
-
 con.addEventListener('drop', function (e) {
   e.preventDefault();
-  // now we need to find pointer position
-  // we can't use stage.getPointerPosition() here, because that event
-  // is not registered by Konva.Stage
-  // we can register it manually:
+  console.log(e.target);
   stage.setPointersPositions(e);
 
-
-
-
+  console.log("들어옴?")
+ 
+  
   Konva.Image.fromURL(itemURL, function (image) {
     flowername = itemURL;
-    //URL에서 꽃 사진 이름만 추출하기 'flower1.png'이와 같은 형태로만
     flowername = flowername.replace(/^.*\//, '');
+    console.log(flowername)
+    if(bouquet_items[flowername]==null){
+      bouquet_items[flowername]=1;
+   
+    }
+    else{
+      ++bouquet_items[flowername];
+     
+    }
     
-    
+    console.log(bouquet_items);
+   
     if(itemURL)
 
       image.setAttrs({
@@ -61,23 +57,16 @@ con.addEventListener('drop', function (e) {
         height: 160,
         scaleX: 0.8,
         scaleY: 0.8,
-        name: flowername     
+        name: flowername,
       })
-       
+
       imageobject = image
-      
-
-      console.log(imageobject)
-      console.log(imageobject.attrs.name)
-
-
-
       layer.add(imageobject);
-      
+
       imageobject.position(stage.getPointerPosition());
       imageobject.draggable(true);
-      
-    }); 
+    });
+
 });
 // ================================================
 
@@ -152,26 +141,32 @@ stage.on('click tap', function (e) {
   if (selectionRectangle.visible()) {
     return;
   }
-
+ 
   // if click on empty area - remove all selections
   if (e.target === stage) {
     tr.nodes([]);
     return;
   }
 
+  
+  
   document.getElementById('removeClick').addEventListener('click', () => {
       
     e.target.destroy();
-    
+    tr.nodes([]);
+   
+    var itemName = e.target.attrs.name;
+  
+    if(bouquet_items[itemName]==0){
+      bouquet_items[itemName]=0;
+    }
+    else{
+      --bouquet_items[itemName];
+    }
  
   layer.draw();
 });
-  // do nothing if clicked NOT on our rectangles
-  console.log(e.target);
-  if (!e.target.hasName(flowername)) {
 
-    return;
-  }
   // do we pressed shift or ctrl?
   const metaPressed = e.evt.shiftKey || e.evt.ctrlKey || e.evt.metaKey;
   const isSelected = tr.nodes().indexOf(e.target) >= 0;
@@ -180,7 +175,6 @@ stage.on('click tap', function (e) {
     // if no key pressed and the node is not selected
     // select just one
     tr.nodes([e.target]);
-    
   } else if (metaPressed && isSelected) {
     // if we pressed keys and node was selected
     // we need to remove it from selection:
@@ -195,3 +189,12 @@ stage.on('click tap', function (e) {
   }
 });
 
+function PasstoOrder()
+{
+
+  localStorage.setItem("items",JSON.stringify(bouquet_items));
+  localStorage.setItem("canvas",JSON.stringify(stage));
+
+
+  window.location.href = 'http://127.0.0.1:8000/customizingapp/order/'
+}

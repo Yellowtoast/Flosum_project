@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제정보</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flosum</title>
+    <link rel="stylesheet" href="{% static  'css/calender.css' %}">
+
+    <link rel='stylesheet' type='text/css' href="{% static 'css/default.css' %}" />
+  <link rel='stylesheet' type='text/css' href="{% static 'css/layout.css' %}" />
+  <link rel='stylesheet' type='text/css' href="{% static 'css/margin.css' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet"> 
+
+ 
+</head>
+
+<body>
+  <div class="nav-wrapper">
+    <div class="logo">Flosum</div>
+      <div class="row-t1">
+        <div class="row-t0 margin-right-120 margin-top-12">
+          <a class="nav-item">홈</a>
+          <a class="nav-item active">나만의 꽃 만들기</a>
+          <a class="nav-item">로그인</a>
+          <a class="nav-item">회원가입</a>
+        </div>
+
+        <div class="row-t1 margin-bottom-16">
+          <button class="icon">
+            <img src="{% static 'icon/person.png'%}" /></button>
+          
+          <button class="icon">
+            <img src="{% static 'icon/heart.png' }" /></button>
+              
+          <button class="icon">
+            <img src="{% static 'icon/cart.png' }" /></button>
+        </div>
+      </div>
+  </div>
+
+
+  <div class="content-wrapper">
+
+    <div class="item_flower">여기는 꽃 부분</div>
+
+    <div class="container_left">
+      <p class="item_ordertitle">주문하기</p>
+      <div class="container_left_1">
+        <div class="item_graybox">
+
+          <div container>
+            <p class="address_title">주소지</p>
+            <form method="POST" action="">
+              <div id="address1">
+                <input name="address1" onfocus="this.placeholder='주소를 입력하세요'" type="text" id="address" placeholder="주소를 입력하세요"></div>
+              <div class="address_detail">
+                <div id="address2">
+                  <input name="address2" onfocus="this.placeholder='상세주소를 입력하세요'" type="text" id="address" placeholder="상세주소를 입력하세요"></div>
+                <div id="address3">
+                  <input name="address3" onfocus="this.placeholder='우편번호'" type="text" id="address" placeholder="우편번호"></div>
+              </div>
+            </form>
+          </div>
+
+
+          <div class="container">
+            <p class="day_title">배송받을 날짜</p>
+            <!-- calender -->
+            <div class="my-calendar clearfix">
+              <div class="clicked-date">
+                <div class="cal-day"></div>
+                <div class="cal-date"></div>
+              </div>
+              <div class="calendar-box">
+                <div class="ctr-box clearfix">
+                  <button type="button" title="prev" class="btn-cal prev"></button>
+                  <span class="cal-month"></span>
+                  <span class="cal-year"></span>
+                  <button type="button" title="next" class="btn-cal next"></button>
+                </div>
+                <table class="cal-table">
+                  <thead>
+                    <tr>
+                      <th>S</th>
+                      <th>M</th>
+                      <th>T</th>
+                      <th>W</th>
+                      <th>T</th>
+                      <th>F</th>
+                      <th>S</th>
+                    </tr>
+                  </thead>
+                  <tbody class="cal-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+              <!-- // .my-calendar -->
+        </div>
+        <div class="container_left_2">
+          <div class="order_list">
+            <div class="item_list">
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+              <p>주문 상세내역 들어갈 곳</p>
+
+            </div>
+            <div class="total">
+              <div><hr class="horizon"></div>
+              <div class="total_money">
+                <p>총 가격</p><p>000원</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="go_order_button">
+            <button onClick="location.href='#'" class="go_order">결제하기</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <form method="post" name="ex_form" action="{% url 'Pass' %}"> 
+    {%csrf_token%}
+    <input type="hidden" name="target_name" value="dasd"> 
+    <input type="button" name="anything_name" value="submit" onclick=ex_form.submit();> 
+</form>
+
+
+
+</div>
+<div class="result-section" id="container"> 
+<script>
+    console.log("들어옴?")
+    var items = JSON.parse(localStorage.getItem("items"));
+    var canvas = JSON.parse(localStorage.getItem("canvas"));
+
+    for ( var key in items){
+      <p>ddsafaf </p>
+       // document.write("key " + key + " has value " + items[key]+"<br>");
+    }
+
+
+      var count_num = localStorage.getItem("canvas");  
+      console.log(count_num);
+      document.ex_form.target_name.value = count_num
+
+</script>
+<script src="{% static 'js/drag.js' %}"></script>
+
+
+
+  <!--달력-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/calender.js' %}"></script>
+</body>
+</html>
+

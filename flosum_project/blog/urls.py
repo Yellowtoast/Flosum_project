@@ -12,4 +12,4 @@ urlpatterns = [
     # Comment
     path('comment/<int:blog_id>',views.comment, name='comment'),
     path('comment/delete/<int:comment_id>',views.comment_delete, name='comment_delete'),
-]
+] 

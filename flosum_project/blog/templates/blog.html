@@ -1,4 +1,4 @@
-{% extends 'basic.html' %}
+
 {% block content %}
 
 {% if blogs %}
@@ -7,6 +7,7 @@
   <div class="card-body">
     <h2 class="card-title"><a href="{%url 'detail' blog.id%}" style="color: black">{{blog.title}}</a></h2>
       <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
+    {% if blog.image  %}<img src={{ blog.image.url }}>{% endif %}
   </div>
 </div>
 {% endfor %}
