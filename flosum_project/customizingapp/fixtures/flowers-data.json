@@ -1,0 +1,21 @@
+[
+    {
+      "model": "customizingapp.Flower",
+      "fields": {
+        "name": "dhila",
+        "color": "핑크",
+        "price": 3500,
+        "img": "dhaila.png"
+      }
+    },
+    {
+      "model": "customizingapp.Flower",
+      "fields": {
+        "name": "bellflower",
+        "color": "핑크",
+        "price": 3500,
+        "img": "dhaila.png"
+      }
+    }
+]
+
