@@ -1,19 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="blog.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/margin.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="crossorigin"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"/>
+</head>
+<body>
+  <div class="blog">
+    {% block content %}
 
-{% block content %}
+  
+    <div class="page-wrapper">
+      <nav>
+        <div class="nav-wrapper">
+          <div class="logo">Flosum</div>
+          <div class="row-t1">
+            <div class="row-t0 margin-right-120 margin-top-12">
+              <a class="nav-item" id="menu1" href='/'>홈</a>
+              <a class="nav-item" id="menu2" href='/blog/'>나만의 꽃 만들기</a>
+              <a class="nav-item active" id="menu3" href='/blog/'>Flosum 게시판</a>
+            </div>
+            <div class="row-t1 margin-bottom-16">
+              <button class="icon">
+                <img src="static 'icon/person.png"/>
+              </button>
+            <button class="icon">
+                <img src="static 'icon/heart.png"/>
+              </button>
+              <button class="icon">
+                <img src="static 'icon/cart.png"/>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      {% if blogs %}
+      {% for blog in blogs %}
+      
+      <div class="card-section">
 
-{% if blogs %}
-{% for blog in blogs %}
-<div class="card">
-  <div class="card-body">
-    <h2 class="card-title"><a href="{%url 'detail' blog.id%}" style="color: black">{{blog.title}}</a></h2>
-      <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
-    {% if blog.image  %}<img src={{ blog.image.url }}>{% endif %}
+        
+        
+        <div class="card">
+          <a href="{%url 'detail' blog.id%}" style="color: black">
+            {% if blog.image  %}<img class="card-image" src={{ blog.image.url }}>{% endif %}
+          </a>
+
+          <div class="card-title"><a href="{%url 'detail' blog.id%}" ></a></div>
+         
+        </div>
+       
+        
+      </div>
+      {% endfor %}
+      {% else %}
+      <h1>글이 존재하지 않습니다.</h1>
+      {% endif %}
+      <br>
+      <br>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <br>
+      <br>
+      <a href="{% url 'new' %}"><button type="button" class="btn btn-dark">글쓰기</button></a>
+      </div>
+      {% endblock %}
+    </div>
   </div>
-</div>
-{% endfor %}
-{% else %}
-<h1>글이 존재하지 않습니다.</h1>
-{% endif %}
-<a href="{% url 'new' %}"><button type="button" class="btn btn-dark">글쓰기</button></a>
-</div>
-{% endblock %}
+</body>
+</html>

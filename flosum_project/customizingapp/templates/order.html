@@ -112,21 +112,11 @@
         </div>
         <div class="container_left_2">
           <div class="order_list">
-            <div class="item_list">
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
-              <p>주문 상세내역 들어갈 곳</p>
+            <div class="item_list" id ="itemlist">
+             
+
+
+        
 
             </div>
             <div class="total">
@@ -163,9 +153,18 @@
     var items = JSON.parse(localStorage.getItem("items"));
     var canvas = JSON.parse(localStorage.getItem("canvas"));
 
+
+
+
+
     for ( var key in items){
-      <p>ddsafaf </p>
-       // document.write("key " + key + " has value " + items[key]+"<br>");
+     
+       var pre = document.getElementById("itemlist");
+     
+       flowername = key.replace(/^.*\//, '');
+     
+       pre.innerHTML += '<img src =' + key + ' style="max-width: 30%; height: auto;" '+ '>' +'  '+"아이템: "+ flowername +"갯수: " + items[key]+ "총합: "+ items[key]*1000  ;
+      
     }
 
 

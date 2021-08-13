@@ -32,13 +32,13 @@ con.addEventListener('drop', function (e) {
   console.log(e.target);
   stage.setPointersPositions(e);
 
-  console.log("들어옴?")
+ 
  
   
   Konva.Image.fromURL(itemURL, function (image) {
     flowername = itemURL;
-    flowername = flowername.replace(/^.*\//, '');
-    console.log(flowername)
+    //flowername = flowername.replace(/^.*\//, '');
+   // console.log(flowername)
     if(bouquet_items[flowername]==null){
       bouquet_items[flowername]=1;
    
@@ -196,5 +196,6 @@ function PasstoOrder()
   localStorage.setItem("canvas",JSON.stringify(stage));
 
 
-  window.location.href = 'http://127.0.0.1:8000/customizingapp/order/'
+  var link = window.location.href;
+  window.location.href=link+'order/';
 }
