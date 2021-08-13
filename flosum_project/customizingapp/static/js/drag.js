@@ -14,6 +14,7 @@ stage.add(layer);
 
 // 드래그하는 요소의 url은?
 var itemURL = '';
+var Flower;
 
 document
   .getElementById('flowers')
@@ -38,6 +39,8 @@ con.addEventListener('drop', function (e) {
   Konva.Image.fromURL(itemURL, function (image) {
     flowername = itemURL;
     flowername = flowername.replace(/^.*\//, '');
+
+    
     console.log(flowername)
     if(bouquet_items[flowername]==null){
       bouquet_items[flowername]=1;
@@ -57,7 +60,8 @@ con.addEventListener('drop', function (e) {
         height: 160,
         scaleX: 0.8,
         scaleY: 0.8,
-        name: flowername,
+        name: itemURL,
+        src: itemURL,
       })
 
       imageobject = image
@@ -68,7 +72,7 @@ con.addEventListener('drop', function (e) {
     });
 
 });
-// ================================================
+// ===============================
 
 var tr = new Konva.Transformer();
 layer.add(tr);
@@ -79,7 +83,7 @@ tr.nodes([imageobject]);
 // add a new feature, lets add ability to draw selection rectangle
 var selectionRectangle = new Konva.Rect({
   fill: 'rgba(0,0,255,0.5)',
-  visible: true,
+  visible: false,
 });
 layer.add(selectionRectangle);
 
@@ -191,9 +195,12 @@ stage.on('click tap', function (e) {
 
 function PasstoOrder()
 {
-
+    var dataURL = stage.toDataURL();
+     
   localStorage.setItem("items",JSON.stringify(bouquet_items));
-  localStorage.setItem("canvas",JSON.stringify(stage));
+  localStorage.setItem("stage",JSON.stringify(stage));
+  localStorage.setItem("layer",JSON.stringify(layer));
+  localStorage.setItem("stageURL", dataURL);
 
 
   window.location.href = 'http://127.0.0.1:8000/customizingapp/order/'

@@ -95,6 +95,17 @@ body {
     overflow-y: scroll;
   }
   
+
+  .item_flower {
+    display: flex;
+    /* position: absolute; */
+    z-index: 1;
+    margin-left: 6rem;
+    width: 750px;
+    height: 730px;
+    /* border: 10px solid black ; */
+    margin-right: 20px;
+  }
   .input-section .label {
     font-size: 24px;
     font-weight: bold;
@@ -498,10 +509,6 @@ body {
     justify-content: space-between;
   }
 
-  .item_flower{
-    display: flex;
-    width:1000px;
-  }
 
   .item_ordertitle{
     flex-direction: column;
